@@ -15,5 +15,6 @@ export class AppComponent {
     for (let value in this.form.value) {
       console.log(`${value}: ${this.form.value[value]}`)
     }
+    this.form.reset();
   }
 }
