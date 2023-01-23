@@ -5,7 +5,10 @@
       <form #f="ngForm">
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" id="email" class="form-control" ngModel name="email" required>
+          <input type="email" id="email" class="form-control" ngModel name="email" required email #email="ngModel">
+          <span class="help-block" *ngIf="email.invalid && email.touched"><em>
+            Please enter a valid email address!
+          </em></span>
         </div>
         <div class="form-group">
           <label for="subscription">Subscription:</label>
@@ -15,7 +18,10 @@
         </div>
         <div class="form-group">
           <label for="password">Password:</label>
-          <input type="password" name="password" id="password" class="form-control" ngModel required>
+          <input type="password" name="password" id="password" class="form-control" ngModel required #password="ngModel">
+          <span class="help-block" *ngIf="password.invalid && password.touched"><em>
+            Please enter a valid password!
+          </em></span>
         </div>
         <hr>
         <p class="alert alert-warning" *ngIf="f.invalid && f.touched">
