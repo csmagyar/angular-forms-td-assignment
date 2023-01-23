@@ -8,4 +8,6 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   @ViewChild('f') form: NgForm;
+  subscriptions = ['basic','advanced','pro'];
+  defaultSub = 'advanced';
 }
