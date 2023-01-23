@@ -10,4 +10,10 @@ export class AppComponent {
   @ViewChild('f') form: NgForm;
   subscriptions = ['basic','advanced','pro'];
   defaultSub = 'advanced';
+
+  onSubmit(): void {
+    for (let value in this.form.value) {
+      console.log(`${value}: ${this.form.value[value]}`)
+    }
+  }
 }
